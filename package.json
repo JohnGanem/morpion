@@ -1,0 +1,16 @@
+{
+  "name": "Morpion",
+  "description": "a tic tac toe game",
+  "version": "0.0.1",
+  "author": {
+    "name": "Benjamin Matuszewski",
+    "email": "benjamin.matuszewski@gmail.com"
+  },
+  "dependencies": {
+   	"express" : "3.0.*",
+   	"socket.io" : "0.9.*"
+  },
+  "engines": {
+  	"node": "0.8.*"
+  }
+}
