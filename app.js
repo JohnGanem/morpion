@@ -13,6 +13,13 @@ app.get( '/', function( req, res, next ) {
 var io = app.get( 'io' );
 // note : to emit to all clients : io.sockets.emit();
 var users = {};
+var dataTest = {
+	players : {
+		pQwMAabQL3jJvVQ4L1gJ : {id: "pQwMAabQL3jJvVQ4L1gJ", name: "test", team: "circle", score: 0, isPlaying: false},
+		jVJa9XETjiy2QqTbL1gK : {id: "jVJa9XETjiy2QqTbL1gK", name: "niap", team: "cross", score: 0, isPlaying: true}
+	},
+	begins : 'cross'
+}
 
 io.sockets.on( 'connection', function( socket ) {
 	// -- test --
@@ -75,9 +82,8 @@ io.sockets.on( 'connection', function( socket ) {
 	socket.on( 'disconnect', function() {
 		
 		if ( users[ socket.id ] ) {
-			var team = game.deletePlayer( socket.id );
-			delete users[socket.id];
-			console.log( 'log info desconnect :', users );
+			game.deletePlayer( socket.id );
+			delete users[ socket.id ];
 		}
 	});
 });

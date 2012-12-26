@@ -30,7 +30,7 @@ var Morpion = (function( window, document, $, io, View, _templates, undefined ) 
 
 			that._view.display( 'login', {
 				sorry : 'Sorry this name is already used',
-				field : 'Please enter another name'
+				field : 'Try again...'
 			}, true );
 		});
 		
@@ -89,7 +89,7 @@ var Morpion = (function( window, document, $, io, View, _templates, undefined ) 
 		this._socket.on( 'winner.is', function( data ) {
 			that._view.freeze();
 			that._view.dialog = that._view.display( 'dialog', {
-				text : 'wins !',
+				text : 'is the winner !',
 				button : {
 					label : 'Replay',
 					id : 'btn-replay'
@@ -116,7 +116,7 @@ var Morpion = (function( window, document, $, io, View, _templates, undefined ) 
 			that._view.dialog = that._view.display( 'dialog', {
 				text : 'has run away !',
 				button : {
-					label : 'find another player',
+					label : 'Find a new enemy',
 					id : 'btn-find'
 				} 
 			}, false );
@@ -204,7 +204,7 @@ $( document ).ready( function() {
 	// new App();
 	var app = new Morpion({
 		url : window.location.hostname,
-		option : {'sync disconnect on unload' : true} 
+		option : { 'sync disconnect on unload' : true }
 	});
 	app.run();
 });

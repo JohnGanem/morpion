@@ -105,14 +105,14 @@ var View = (function( window, document, $, _, Canvas, undefined) {
 	
 	View.prototype.animatePath = function( path ) {
 		var that = this,
-			canvas = $( _.map( path, function( num ){
+			selector = $( _.map( path, function( num ){
 				return '#canvas_' + num;
-			}).join( ',' ) );
+			}).join( ',' ) )
 		;
 		
 		// do some little animation here
 		(function anim( count ) {
-			canvas.fadeTo( 400, count % 2, function() {
+			selector.fadeTo( 400, count % 2, function() {
 				that.animationTimeout = setTimeout( function() {
 					anim( ++count, path );
 				}, 100 );
