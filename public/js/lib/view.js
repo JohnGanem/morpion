@@ -14,7 +14,7 @@ var View = (function( window, document, $, _, Canvas, undefined) {
 	};
 
 	// _.template wrapper
-	// @return : jQuery object of rendered template
+	// return : jQuery object of rendered template
 	View.prototype.display = function( tmplId, data, empty, container ) {
 		var container = container || this.container,
 			tmpl = _.template( this._templates[ tmplId ] ),
@@ -31,7 +31,7 @@ var View = (function( window, document, $, _, Canvas, undefined) {
 	};
 	
 	View.prototype.personalize = function( elm, team, size ) {
-		// size : 80 for users - 70 fir dialogs
+		// size : 80 for users - 70 for dialogs
 		var canvas = new Canvas( false, size ); 
 		elm.prepend( canvas._elm );
 		canvas.draw( team );
@@ -50,14 +50,16 @@ var View = (function( window, document, $, _, Canvas, undefined) {
 		}
 	};
 	
-	// use : 
-	// var loader = myView.initLoader( $( '#loader' ) );
-	// ... loader.stop();
-	View.prototype.initLoader = function( $elm ) {
+	/** 
+	 *	use : 
+	 *		var loader = myView.initLoader( $( '#loader' ) );
+	 *		... loader.stop();
+	 **/
+	View.prototype.initLoader = function( elm ) {
 		var timeoutId, count = 0,
-			blocks = $elm.children();
+			blocks = elm.children();
 			
-		function anim() {
+		(function anim() {
 			var lastIndex = (count - 1) % 6,
 				index = count % 6;
 			
@@ -68,8 +70,7 @@ var View = (function( window, document, $, _, Canvas, undefined) {
 				count++; 
 				anim();
 			}, 1000 );
-		}
-		anim();
+		}());
 		
 		return {
 			stop : function() {
@@ -82,7 +83,6 @@ var View = (function( window, document, $, _, Canvas, undefined) {
 		var size = 120,
 			mask = mask,
 			container = mask.find( '#playground' ),
-			// container should be created here...
 			canvasCollection = {};
 	
 		mask.width( 3 * size );

@@ -174,6 +174,7 @@ html { font-size: 64.5%; }
     border: 1px solid #035f9a;
     outline: none;
 }
+
 .btn:hover,
 .btn:focus {
     background: -webkit-linear-gradient( bottom, #0d3d88, #0772b5 );
@@ -184,7 +185,6 @@ html { font-size: 64.5%; }
     border: 1px solid #093579;
     box-shadow: 0 0 4px 0 rgba( 90, 90, 90, 0.8 ) inset;
 }
-
 
 input[type=text] {
 	width: 98%;
@@ -199,9 +199,9 @@ input[type=text] {
 	border: 1px solid #ccc;
 }
 
-/* 	-------------------------------------
+/* 	=====================================
 	LAYOUT
-   	-------------------------------------  */
+   	=====================================  */
 
 body {
 	font-family: Arial;
@@ -229,13 +229,13 @@ header {
 		color: #fff;
 	}
 
-
 section {
 	margin: 0 auto;
 	width: 90%;
 	position: relative;
 	height: 510px;
 }
+
 footer {
 	font-size: 1.2rem;
 	color: #676767;
@@ -245,10 +245,14 @@ footer {
 	font-family: courier;
 	border-top: 1px solid #ccc;
 }
-/* 	-------------------------------------
+
+/* 	=====================================
 	TEMPLATES
-   	-------------------------------------  */
-/* login */
+   	=====================================  */
+   	
+/* 	login 
+    -------------------------------------  */
+    
 .content {
 	padding-top: 40px;
 	position: relative;
@@ -273,7 +277,9 @@ p {
 	font: 100 1.6rem "Helvetica Neue", Helvetica, Arial, sans-serif;	
 }
 
-/* waiting */
+/* 	waiting 
+    -------------------------------------  */
+
 .square {
 	float: left;
 	width: 10px;
@@ -284,7 +290,9 @@ p {
 	opacity: 0;
 }
 
-/* players */
+/* 	players 
+    -------------------------------------  */
+
 .player {
 	width: 48%;
 	margin: 0 0.5% 40px;
@@ -328,7 +336,9 @@ p {
     text-index: 1rem;
 }
 
-/* playground */
+/* 	playground
+    -------------------------------------  */
+
 #mask {
 	margin: 0 auto;
 	overflow: hidden;
@@ -347,7 +357,9 @@ canvas {
 	margin-top: -1px;
 }
 
-/* dialog */
+/* 	dialog
+    -------------------------------------  */
+
 .dialog {
 	position: absolute;
 	top: 200px;
@@ -377,16 +389,6 @@ canvas {
 	.dialog p.center {
 		text-indent: 0;
 	}
-
-
-
-
-
-
-
-
-
-
 
 
 /* ==========================================================================

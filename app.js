@@ -1,6 +1,6 @@
-var app = require( './lib/bootstrap' )
-  , game = require( './lib/game' )
-  ,	User = require( './lib/user' )
+var app = require( './lib/bootstrap' ),
+  	game = require( './lib/game' ),	// game.js exports a single instance of Game
+  	User = require( './lib/user' )
 ;
 
 // one file app - ..short routing
@@ -10,21 +10,12 @@ app.get( '/', function( req, res, next ) {
 });
 
 // init sockets
-var io = app.get( 'io' );
-// note : to emit to all clients : io.sockets.emit();
-var users = {};
-var dataTest = {
-	players : {
-		pQwMAabQL3jJvVQ4L1gJ : {id: "pQwMAabQL3jJvVQ4L1gJ", name: "test", team: "circle", score: 0, isPlaying: false},
-		jVJa9XETjiy2QqTbL1gK : {id: "jVJa9XETjiy2QqTbL1gK", name: "niap", team: "cross", score: 0, isPlaying: true}
-	},
-	begins : 'cross'
-}
+// 		note : to emit to all clients : io.sockets.emit();
+var io = app.get( 'io' ),
+	users = {};
 
 io.sockets.on( 'connection', function( socket ) {
-	// -- test --
-	// io.sockets.emit( 'game.launch', dataTest );
-	//*
+
 	// create a socket Manager
 	socket.on( 'hello', function() {
 		socket.emit( 'choose.name' );
@@ -61,12 +52,11 @@ io.sockets.on( 'connection', function( socket ) {
 	});
 	
 	socket.on( 'find.player', function() {
-		// if other player clicked `replay` after abort
 		for( var i in users ) {
 			if ( users[ i ].isInGame === false ) {
 				game.setPlayer( users[ i ] );
 				game.launch();
-				console.log( users[ i ] );
+				// console.log( users[ i ] );
 				break;
 			} else {
 				socket.emit( 'game.waiting' );
@@ -75,12 +65,11 @@ io.sockets.on( 'connection', function( socket ) {
 	});
 	
 	socket.on( 'box.checked', function( data ) {
-		console.log( data );
+		// console.log( data );
 		game.deal( data );
 	});
 	
 	socket.on( 'disconnect', function() {
-		
 		if ( users[ socket.id ] ) {
 			game.deletePlayer( socket.id );
 			delete users[ socket.id ];

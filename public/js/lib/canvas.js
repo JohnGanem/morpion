@@ -2,10 +2,11 @@ var Canvas = function( window, document, $, undefined ) {
 	var Canvas = function( id, size ) {
 		var size = size || 200;
 		
-		 // set to false in game.launch ( _view.unfreeze )
+		 // set to false in game.launch() { _view.unfreeze() }
 		this.isLocked = true;
 		
-		// if this._id === false no eventListener
+		// if ( this._id === false )
+		// the canvas is just a illustration
 		this._id = id;
 		this._elm = document.createElement( 'canvas' );
 		

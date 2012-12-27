@@ -1,6 +1,5 @@
-// templates ( for _.template )
+// templates ( underscore syntax )
 // ---------------------------------------------
-
 var _templates = {};
 
 _templates.login =  

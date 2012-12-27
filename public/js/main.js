@@ -59,7 +59,6 @@ var Morpion = (function( window, document, $, io, View, _templates, undefined ) 
 			
 			that._view.createGame( data.players );
 			that._view.togglePlayer( data.begins );
-			console.log( data.players );
 			
 			that._view.dialog = that._view.display( 'dialog', {
 				text : 'begins'	
@@ -123,7 +122,7 @@ var Morpion = (function( window, document, $, io, View, _templates, undefined ) 
 			that._view.personalize( that._view.dialog, data.team, 70 );
 		});
 		
-		// deal boxclick
+		// deal box click
 		this._socket.on( 'deal.refused', function() {
 			console.log( 'deal refused' );
 		});
@@ -148,7 +147,7 @@ var Morpion = (function( window, document, $, io, View, _templates, undefined ) 
 	}
 	
 	Morpion.prototype.listenEvents = function() {
-		// use this._view.container
+
 		var that = this,
 			container = this._view.container;
 		
@@ -201,8 +200,8 @@ var Morpion = (function( window, document, $, io, View, _templates, undefined ) 
 }( window, document, jQuery, io, View, _templates ));
 
 $( document ).ready( function() {
-	// new App();
 	var app = new Morpion({
+		// heroku config
 		url : window.location.hostname,
 		option : { 'sync disconnect on unload' : true }
 	});
