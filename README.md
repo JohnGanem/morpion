@@ -1,8 +1,7 @@
-MORPION
-=======
+# MORPION
 
-a Tic, tac, toe game using node.js
-----------------------------------
+a "Tic, Tac, Toe" game using node.js
+------------------------------------
 
 http://sleepy-anchorage-1790.herokuapp.com/
 
@@ -25,12 +24,13 @@ TODO LIST
 Allow multiple instances of game at the same time
 (only 2 players at the same time for now)
 
-Adding a hight score view on login view
-- require mongodb
-- mongodb require brew
-- brew require Xcode
-- free Xcode require an updated version of osX (currently 10.6.8 snow Leopard)
-- finally, have something to pay to Apple... not during Xmas...
+Adding a hight score view on login view :
+1. require mongodb
+2. mongodb require brew
+3. brew require Xcode
+4. free Xcode require an updated version of osX (currently 10.6.8 snow Leopard)
+5. finally, have something to pay to Apple... not during Xmas...
+
 (http://stackoverflow.com/questions/9765561/how-to-xcode-4-in-osx-10-6-8)
 
 
