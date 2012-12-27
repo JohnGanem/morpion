@@ -26,11 +26,11 @@ Allow multiple instances of game at the same time
 (only 2 players at the same time for now)
 
 Adding a hight score view on login view
-	- require mongodb
-	- mongodb require brew
-	- brew require Xcode
-	- free Xcode require an updated version of osX (currently 10.6.8 snow Leopard)
-	- finally, have something to pay to Apple... not during Xmas...
+- require mongodb
+- mongodb require brew
+- brew require Xcode
+- free Xcode require an updated version of osX (currently 10.6.8 snow Leopard)
+- finally, have something to pay to Apple... not during Xmas...
 (http://stackoverflow.com/questions/9765561/how-to-xcode-4-in-osx-10-6-8)
 
 
