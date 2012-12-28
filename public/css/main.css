@@ -349,12 +349,13 @@ p {
 	position: relative;
 }
 
-canvas {
+#playground canvas {
 	border : 1px solid #aaa;
 	float: left;
 	border-collapse: collapse;
 	margin-left: -1px;
 	margin-top: -1px;
+	cursor: pointer;
 }
 
 /* 	dialog
