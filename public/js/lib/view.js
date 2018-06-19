@@ -13,7 +13,6 @@ var View = (function( window, document, $, _, Canvas, undefined) {
 		this.canvas = {};
 	};
 
-	// _.template wrapper
 	// return : jQuery object of rendered template
 	View.prototype.display = function( tmplId, data, empty, container ) {
 		var container = container || this.container,
@@ -50,11 +49,6 @@ var View = (function( window, document, $, _, Canvas, undefined) {
 		}
 	};
 	
-	/** 
-	 *	use : 
-	 *		var loader = myView.initLoader( $( '#loader' ) );
-	 *		... loader.stop();
-	 **/
 	View.prototype.initLoader = function( elm ) {
 		var timeoutId, count = 0,
 			blocks = elm.children();

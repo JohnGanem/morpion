@@ -223,9 +223,6 @@ header {
 	}
 	header h2 { 
 		font: 100 3rem "Helvetica Neue", Helvetica, Arial, sans-serif;
-		position: relative;
-		top: -3.4rem;
-		left: 4rem;
 		color: #fff;
 	}
 

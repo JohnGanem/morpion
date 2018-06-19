@@ -1,4 +1,3 @@
-// templates ( underscore syntax )
 // ---------------------------------------------
 var _templates = {};
 

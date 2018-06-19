@@ -6,9 +6,7 @@ $( document ).ready( function() {
 	// TODO - logo
 	// ajouter des canvas dans le header
 
-	// _.template wrapper
 	// -----------------------------------------
-	// TODO implement trasitions
 	function display( tmplId, data, empty, container ) {
 		var container = container || content,
 			tmpl = _.template( _templates[ tmplId ] ),
@@ -24,7 +22,6 @@ $( document ).ready( function() {
 		return html;
 	}
 	
-	// make some little object with that stuff...
 	function load() {
 		var timeoutId, count = 0,
 			blocks = $( '#loader' ).children();
@@ -81,7 +78,7 @@ $( document ).ready( function() {
 		});
 	}
 	
-	// data ( looks like a model finally... )
+	// data
 	// ----------------------------------------------
 	var contentTxt = {
 		login1 : {
@@ -103,7 +100,6 @@ $( document ).ready( function() {
 		}
 	};
 	
-	// from socket game.launch
 	var playersInfos = {
 		player1 : {
 			id : 'jkqQERGnc4QER',
@@ -143,7 +139,6 @@ $( document ).ready( function() {
 	
 	// tests 
 	// ----------------------------------------------
-	// loader, dialog needs to have a higher scope
 	var loader, dialog;
 	$( '#wrapper' ).on( 'click', '.btn', function() {
 		// loader.stop();
@@ -199,7 +194,6 @@ $( document ).ready( function() {
 				display( 'playground', {}, false );
 				addPlayground();
 				
-				// Begins...
 				var canvas = new Canvas( false, 70 );
 				
 				dialog = display( 'dialog', dialogTxt['begins'], false );
@@ -249,36 +243,4 @@ $( document ).ready( function() {
 	
 	testTmpl( 5, true );
 	
-
-
-	/*
-	// this a part of the view 2...
-	var size = 120,
-		mask = $( '#mask' );
-		container = $( '#playground' ),
-		canvasCollection = {};
-	
-	mask.width( 3 * size );
-	mask.height( 3 * size );
-	container.css({
-		width : ( 3 * size + 2*3),
-		height : ( 3 * size + 2*3),
-		bottom : '2px',
-		right : '2px'
-	});
-	
-	for ( var i = 0; i < 9; i++ ) {
-		var canvas = new Canvas( i, size );
-		canvasCollection[ canvas._id ] = canvas;
-		container.append( canvas._elm );
-	}
-	
-	var teams = [ 'cross', 'circle' ];
-	var toPlay = true;
-
-	container.on( 'click', 'canvas', function() {
-		canvasCollection[ this.id ].draw( teams[ + toPlay ] );
-		toPlay = !toPlay;
-	});
-	*/
 });
